@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="693846065894-vdsk2v3e08qivdiudo21bk3qeij0i0ll.apps.googleusercontent.com">
+    <title>FANCY TODO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Pacifico&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4B0082;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/fox.png" alt="" width="30" height="25" class="d-inline-block align-text-top">
+                    Fancy Todo
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="home-page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="login-page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="register-page" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="logout" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- START BANNER -->
+    <div style=" position:absolute;
+    top:50%;
+    left:30%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);" id="banner" class="mt-4">
+        <div class="card border border-white">
+            <img src="./img/banner.png" alt="" class="img-fluid responsive">
+            <h6 class="banner-text text-center">Let's Be Productive!</h6>
+        </div>
+    </div>
+    <!-- END BANNER -->
+    <!-- START LOGIN -->
+    <div style=" position:absolute;
+        top:50%;
+        left: 75%;
+        padding:10px;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 25rem;" id="form-login">
+            <h4 class="text-center mt-2">Login</h4>
+            <div class="card-body">
+                <form id="login">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email-login"></div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-login">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">LOGIN</button>
+                    <hr>
+                    <p class="mt-3">Login with google account here:</p>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                </form>
+            </div>
+        </div>
+        <!-- END LOGIN -->
+        <!-- START REGISTER -->
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 25rem;" id="form-register">
+            <h4 class="text-center mt-2">Register</h4>
+            <div class="card-body">
+                <form id="register">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username-register">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email-register">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-register">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">REGISTER</button>
+                </form>
+            </div>
+        </div>
+        <!-- END REGISTER -->
+        <!-- START ADD FORM -->
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 25rem;" id="form-add-todo">
+            <h4 class="text-center mt-2">Add Todo</h4>
+            <div class="card-body">
+                <form id="form-add">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title-todo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description-todo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="due-date" class="form-label">Deadline</label>
+                        <input type="date" class="form-control" id="due-date-todo">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">ADD TODO</button>
+                </form>
+            </div>
+        </div>
+        <!-- END ADD FORM -->
+        <!-- START EDIT FORM -->
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 25rem;" id="form-edit-todo">
+            <h4 class="text-center mt-2">Edit Todo</h4>
+            <div class="card-body">
+                <form id="form-edit">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title-todo-edit">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description-todo-edit">
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example" id="status-todo-edit">
+                            <option value="Uncompleted">Uncompleted</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="due-date" class="form-label">Deadline</label>
+                        <input type="date" class="form-control" id="due-date-todo-edit">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">EDIT TODO</button>
+                </form>
+            </div>
+        </div>
+        <!-- END EDIT FORM -->
+    </div>
+    <!-- START TODO LIST -->
+    <div class="container mt-5" id="todo-list">
+        <a style="text-decoration: none; color: black; font-size: 2rem;" href="#" id="add-todo">
+            <img src="./img/add_icon.png" alt="" style="width: 3rem;">Add todo here....</a>
+        <div class="shadow-lg p-2 mt-3 bg-body rounded" style="width: 48rem;" id="banner-title">
+            <h2 class="text-center" id="title-todo-list"></h2>
+        </div>
+        <div class="row">
+            <div class="col-8" id="append-todo"></div>
+            <!-- END TODO LIST -->
+            <!-- START NEWS API-->
+            <div class="col-4">
+                <div class="shadow-lg p-2 bg-body rounded" style="width: 25rem;">
+                    <h2 class="text-center" id="title-headline">Headline News</h2>
+                </div>
+                <div class="shadow-lg mt-4 bg-body rounded" style="width: 25rem;">
+                    <div id="append-news" style="max-height: 520px; overflow: scroll;"></div>
+                </div>
+                <!-- END NEWS API-->
+                <!-- START PRAYER API -->
+                <div class="shadow-lg p-2 mt-4 bg-body rounded" style="width: 25rem;">
+                    <h3 class="text-center" id="title-headline">Prayer's Time</h3>
+                </div>
+                <div class="shadow-lg p-3 mt-4 bg-body rounded" style="width: 25rem;">
+                    <table class="table table-dark table-sm w-75 m-auto text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sholat</th>
+                                <th scope="col">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="append-prayer"></tbody>
+                    </table>
+                </div>
+                <!-- END PRAYER API -->
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPT -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>

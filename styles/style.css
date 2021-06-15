@@ -1,0 +1,21 @@
+.banner-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+}
+
+#add-todo {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 40px;
+}
+
+#title-todo-list, #title-headline{
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 45vw;
+    height: auto;
+}
